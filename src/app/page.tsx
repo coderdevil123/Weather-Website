@@ -11,7 +11,7 @@ export default function Home() {
     try {
       const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=894beaad98ab419a7b3814d1a907cdd8&units=metric`);
       setWeather(res.data);
-    } catch (err) {
+    } catch {
       alert("Error: City not found or API error");
     }
   };
