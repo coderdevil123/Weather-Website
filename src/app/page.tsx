@@ -3,9 +3,19 @@
 import { useState } from "react";
 import axios from "axios";
 
+interface WeatherData {
+  name: string;
+  main: {
+    temp: number;
+  };
+  weather: {
+    description: string;
+  }[];
+}
+
 export default function Home() {
   const [city, setCity] = useState("");
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState<WeatherData | null>(null);
 
   const fetchWeather = async () => {
     try {
